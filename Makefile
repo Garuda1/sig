@@ -22,15 +22,21 @@ CFLAGS += -Wall\
 SRCS = $(SOURCE_DIR)/main.c
 OBJS = $(SRCS:.c=.o)
 
-all: $(NAME)
+all: prepare $(NAME)
+
+prepare:
+	make -C unixlib
+	sudo make install -C unixlib
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 clean:
+	make -C unixlib clean
 	$(RM) $(OBJS)
 
 fclean: clean
+	make -C unixlib fclean
 	$(RM) $(NAME)
 
 re: fclean all
