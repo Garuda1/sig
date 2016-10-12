@@ -15,11 +15,14 @@ CFLAGS += -Wall\
 					-Werror \
 					-pedantic \
 					-std=c99 \
-					-I./$(INCLUDE_DIR) \
+					-I$(INCLUDE_DIR) \
 					-lunixlib \
-					-O2
+					-O2 \
+					-g
 
-SRCS = $(SOURCE_DIR)/main.c
+SRCS = $(SOURCE_DIR)/main.c \
+       $(SOURCE_DIR)/args.c \
+			 $(SOURCE_DIR)/sig.c
 OBJS = $(SRCS:.c=.o)
 
 all: prepare $(NAME)
