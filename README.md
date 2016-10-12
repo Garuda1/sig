@@ -11,7 +11,7 @@ This utility attempts to send a given signal to the given process ID.
 
 ## Return value
 
-On failure to parse the arguments, it returns `FAILURE` as defined in the [unixlib header](https://github.com/Garuda1/unixlib/unixlib.h). Otherwise, it returns the value returned by the `kill` POSIX function.
+On failure to parse the arguments, it returns `FAILURE` as defined in the [unixlib header](https://github.com/Garuda1/unixlib). Otherwise, it returns the value returned by the `kill` POSIX function.
 
 ## Example use case
 
