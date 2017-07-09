@@ -9,7 +9,7 @@
 INCLUDE_DIR = ./include
 SOURCE_DIR = ./source
 NAME = sig
-RM = rm -f
+RM = rm -rf
 CFLAGS += -Wall\
           -Wextra \
 					-Werror \
@@ -29,7 +29,7 @@ all: prepare $(NAME)
 
 prepare:
 	make -C unixlib
-	sudo make install -C unixlib
+	make install -C unixlib
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
